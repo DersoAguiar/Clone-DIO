@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-import { MdEmail, MdLock } from 'react-icons/md'
+import { MdEmail, MdLock, MdPerson } from 'react-icons/md'
 
 import { Button } from "../../Components/Button";
 import { Header } from "../../Components/Header";
@@ -20,8 +20,9 @@ Row,
 Title,
 TitleLogin,
 SubTitleLogin,
-EsqueciText,
-CriarText
+PoliticaPrivacidade,
+Cadastrado,
+Login
 } from './styles'
 
 const schema = yup.object({
@@ -30,7 +31,7 @@ const schema = yup.object({
   }).required();
 
 
-const Login = () => {  
+const Cadastro = () => {  
     const navigate = useNavigate();
 
     const { control, handleSubmit, formState: { errors } } = useForm({
@@ -62,9 +63,15 @@ const Login = () => {
             </Column>
             <Column>
             <Wrapper>
-                <TitleLogin>Faça seu cadastro</TitleLogin>
-                <SubTitleLogin>Faça seu login e make the change._</SubTitleLogin>
+                <TitleLogin>Comece agora grátis</TitleLogin>
+                <SubTitleLogin>Crie sua conta e make the change._</SubTitleLogin>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                <Input 
+                    name="name" 
+                    control={control}                   
+                    placeholder="Nome Completo" 
+                    leftIcon={<MdPerson />} 
+                    />
                     <Input 
                     name="email"
                     errorMessage={errors?.email?.message}
@@ -80,11 +87,18 @@ const Login = () => {
                     type="password" 
                     leftIcon={<MdLock />}
                     />
-                    <Button title="Entrar" variant="secondary"  type="submit"/>
-                </form>                
-                <Row>
-                    <EsqueciText>Esqueci minha senha</EsqueciText>
-                    <CriarText>Criar conta</CriarText>
+                    <Button title="Criar minha conta" variant="secondary"  type="submit"/>
+                    
+                </form>     
+                <PoliticaPrivacidade>
+                    Ao clicar em "criar minha conta grátis", declaro que aceito as Políticas dee Privacidade e os Termos de Uso da DIO.
+                </PoliticaPrivacidade>    
+                <Row>                    
+                    <Cadastrado>Já tenho cadastro.</Cadastrado>
+
+                    <Login>
+                        <a href='/login'>Fazer login</a>
+                    </Login>
                 </Row>
             </Wrapper>
                 
@@ -95,4 +109,4 @@ const Login = () => {
     )
 }
 
-export { Login }
+export { Cadastro }
