@@ -88,6 +88,7 @@ export const Login = styled.p `
     }
     
     a:hover {
-        text-decoration: underline;        
+        text-decoration: underline;
+        transition: transform .5s;
     }
 `

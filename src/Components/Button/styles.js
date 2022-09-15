@@ -17,7 +17,7 @@ export const ButtonContainer = styled.button`
         &:hover {
             opacity: 0.6;
             cursor: pointer;
-            transition: .5s;
+            transition: transform .5s;
         }
 
         &::after {
