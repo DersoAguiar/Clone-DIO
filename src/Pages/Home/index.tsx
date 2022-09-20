@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from "react-router-dom"
 import bannerImg from '../../assets/banner.png'
 import { Button } from "../../Components/Button";

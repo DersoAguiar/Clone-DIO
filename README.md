@@ -11,3 +11,7 @@
 - Utilização de Formulários com react-hook-form (yarn add react-hook-form);
 - Criação de API fake para tester com json server (npm i json-server);
 - Validação feita com Axios (yarn add axios);
+
+### Convertendo pra TypeScript
+
+ - yarn add typescript @types/node @types/react @types/react-dom @types/jest -D
